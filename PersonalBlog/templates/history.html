@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My History{% endblock title %}</title>
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+   {% block content %}
+       <h1>My history with pictures</h1>
+       <label style="align-items: center">
+           <img width="30%" src="{% static 'img/1.jpg' %}" alt="1">
+           <img width="30%" src="{% static 'img/2.jpg' %}" alt="2">
+           <img width="30%" src="{% static 'img/3.jpg' %}" alt="3">
+           <img width="30%" src="{% static 'img/4.jpg' %}" alt="4">
+       </label>
+       <div>
+           <p>What’s your life story?
+
+            I don’t mean where you grew up, went to school, got your first job, etc. I mean what’s your STORY? What narrative have you constructed from the events of your life? And do you know that this is the single most important question you can ask yourself?
+
+            According to the fascinating field of “narrative psychology,” the stories we tell about ourselves are the key to our well-being. If you’ve interpreted the events of your life to mean that you’re unlucky or unwise, it’s hard to look optimistically at the future. Conversely, if you acknowledge that you’ve made mistakes and faced difficulties but seek (or have already glimpsed) redemption, you’ll feel a much greater sense of agency over your life.
+
+            That time you were laid off, for example, is it further proof that your career’s going nowhere? Or is it the best thing that ever happened, liberating you to find work that suits you better?
+
+            What about your divorce? Is it a sign you’re unlucky in love or a difficult passage to a more hopeful romance?
+
+            The idea is not to delude yourself that bad things are actually good. It is, instead, to find meaning in the progression from one event to the next. It is to recognize that everything constantly changes. In your life, you will move from triumph to heartbreak to boredom and back again, sometimes in the space of a single day. What are you to make of so many emotions, so many events?
+
+            The facts matter less than the narrative.
+
+            Once upon a time, an 18-year-old Frenchwoman named Sophie Serrano gave birth to a baby girl, who suffered from neonatal jaundice.
+
+            The baby spent her first days in an incubator under artificial light and was returned to her mother four days later. Unbeknownst to Sophie, it wasn’t her baby. It was another 4-day-old with jaundice. The nurse had switched the babies by accident.
+
+            Sophie named her daughter Manon. As she grew older, Manon looked nothing like her parents. She had darker skin and frizzy hair, and the neighbors started to gossip about her origins.
+
+            But Sophie never faltered. The nurse had explained that the artificial light used to treat jaundice could affect hair color. Even more, Sophie loved Manon. She knew the story of her life: her cries, her coos, her first words.
+
+            It was only when Sophie’s husband accused her of giving birth to another man’s baby that she went for paternity tests and discovered that her husband was right (sort of). The baby, then aged 10, wasn’t his, but she wasn’t Sophie’s either. She belonged to another set of parents, who had been raising Sophie’s biological daughter in a town several miles away.
+
+            It’s a typically fascinating “switched at birth” tale. But here’s where it takes an unexpected turn.
+
+            A meeting was arranged for the two mothers and their daughters. Sophie saw that her biological daughter looked just like her in a way that Manon did not and never would.
+
+            But she felt no connection to this other girl. It was Manon she had nursed, Manon whose nightmares she’d soothed, and Manon whose stories she knew. This other daughter looked just like Sophie—but what did that even mean, when she didn’t know her stories? The other mother felt the same way.
+
+            “It is not the blood that makes a family,” Ms. Serrano told The New York Times (where I read this story). “What makes a family is what we build together, what we tell each other.”
+
+            Our stories are everything. They are the heart of love and of meaning.
+
+            ——–
+            So what is your story? Are you telling the right one? And are you telling it to the right people?</p>
+            <p><a href="https://quietrev.com/how-to-tell-your-own-life-story/">How to Tell Your Own Life Story</p>
+       </div>
+   {% endblock content %}
+</body>
+</html>

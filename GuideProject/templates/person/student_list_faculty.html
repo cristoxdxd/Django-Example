@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Students of ...{% endblock title %}</title>
+</head>
+<body>
+{% block content %}
+    <h1>Students List</h1>
+    {% for e in object_list %}
+        <li>{{ e.first_name }} {{ e.last_name }}</li>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

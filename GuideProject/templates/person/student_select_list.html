@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Select Faculty{% endblock title %}</title>
+</head>
+<body>
+{% block content %}
+    <h2 class="text-xl-center">Select Faculty</h2>
+    <li>
+        <a href="{% url 'student_list_faculty' 'CIENCIAS' %}">
+            <button type="button" class="btn btn-outline-secondary">FACULTAD DE CIENCIAS</button>
+        </a>
+    </li>
+    <br>
+    <li>
+        <a href="{% url 'student_list_faculty' 'FCA' %}">
+            <button type="button" class="btn btn-outline-secondary">FACULTAD DE CIENCIAS ADMINISTRATIVAS</button>
+        </a>
+    </li>
+    <br>
+    <li>
+        <a href="{% url 'student_list_faculty' 'FICA' %}">
+            <button type="button" class="btn btn-outline-secondary">FACULTAD DE INGENIERÍA CIVIL Y AMBIENTAL</button>
+        </a>
+    </li>
+    <br>
+    <li>
+        <a href="{% url 'student_list_faculty' 'FIEE' %}">
+            <button type="button" class="btn btn-outline-secondary">FACULTAD DE INGENIERÍA ELÉCTRICA Y ELECTRÓNICA</button>
+        </a>
+    </li>
+    <br>
+    <li>
+        <a href="{% url 'student_list_faculty' 'FGP' %}">
+            <button type="button" class="btn btn-outline-secondary">FACULTAD DE GEOLOGÍA Y PETRÓLEOS</button>
+        </a>
+    </li>
+    <br>
+    <li>
+        <a href="{% url 'student_list_faculty' 'FIM' %}">
+            <button type="button" class="btn btn-outline-secondary">FACULTAD DE INGENIERÍA MECÁNICA</button>
+        </a>
+    </li>
+    <br>
+    <li>
+        <a href="{% url 'student_list_faculty' 'FIQA' %}">
+            <button type="button" class="btn btn-outline-secondary">FACULTAD DE INGENIERÍA QUÍMICA Y AGROINDUSTRIA</button>
+        </a>
+    </li>
+    <br>
+    <li>
+        <a href="{% url 'student_list_faculty' 'FIS' %}">
+            <button type="button" class="btn btn-outline-secondary">FACULTAD DE INGENIERÍA DE SISTEMAS</button>
+        </a>
+    </li>
+    <br>
+{% endblock content %}
+</body>
+</html>

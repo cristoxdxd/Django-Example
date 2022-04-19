@@ -1,4 +1,4 @@
-"""PersonalBlog URL Configuration
+"""GuideProject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Apps.Posts.urls')),
+    path('', include('GuideProject.Apps.home.urls')),
+    path('', include('GuideProject.Apps.faculty.urls')),
+    path('', include('GuideProject.Apps.person.urls')),
 ]

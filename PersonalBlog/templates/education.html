@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Education{% endblock title %}</title>
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    {% block content %}
+        <h1>My Education</h1>
+
+        <div>
+            <p>⚫ Unidad Educativa "Eugenio Espejo"</p>
+            <img class="imagen" style="width: 50%" src="{% static 'img/colegio.jpg' %}" alt="UEMEE">
+        </div>
+        <div>
+            <p>⚫ Club de Software EPN</p>
+            <img class="imagen" style="width: 50%" src="{% static 'img/software.jpg' %}" alt="ClubSoftware">
+        </div>
+        <div>
+            <p>⚫ Club de Ciencia de Datos (EPN)</p>
+            <img class="imagen" style="width: 50%" src="{% static 'img/datos.jpg' %}" alt="ClubDatos">
+        </div>
+        <div>
+            <p>⚫ AEIS - EPN</p>
+            <img class="imagen" style="width: 50%" src="{% static 'img/aeis.jpg' %}" alt="AEIS">
+        </div>
+        <div>
+            <p>⚫ Escuela Politécnica Nacional</p>
+            <img class="imagen" style="width: 50%" src="{% static 'img/universidad.jpg' %}" alt="EPN">
+        </div>
+    {% endblock %}
+</body>
+</html>

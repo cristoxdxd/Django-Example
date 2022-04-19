@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Hobbies{% endblock title %}</title>
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    {% block content %}
+        <h1>My Hobbies</h1>
+        <div>
+            <p>I'm a scout. So, I like the nature and community service</p>
+            <img src="{% static 'img/scout.jpg' %}" alt="scout">
+        </div>
+        <div>
+            <p>I really like to play videogames</p>
+            <img style="width: 40%" src="{% static 'img/games.jpg' %}" alt="gamer">
+        </div>
+        <div>
+            <p>I like to take pictures</p>
+            <img style="width: 40%" src="{% static 'img/photography.jpg' %}" alt="photography">
+        </div>
+    {% endblock content %}
+
+</body>
+</html>

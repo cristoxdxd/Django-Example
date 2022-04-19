@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Students{% endblock title %}</title>
+</head>
+<body>
+    {% block content %}
+        <h1 class="text-xl-center">Students</h1>
+        <li>
+            <a href="{% url 'student_list' %}">All Students</a>
+        </li>
+        <br>
+        <li>
+            <a href="{% url 'student_select_list' %}">Students by Faculty</a>
+        </li>
+    {% endblock content %}
+</body>
+</html>
