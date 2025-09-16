@@ -1,0 +1,6 @@
+# GuideProject Specific Requirements
+# University Management System Dependencies
+
+Django>=5.2.0,<6.0.0
+django-bootstrap5>=25.0.0
+django-ckeditor>=6.7.0
