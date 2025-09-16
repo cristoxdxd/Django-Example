@@ -1,23 +1,163 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 {% load django_bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Students{% endblock title %}</title>
-</head>
-<body>
-    {% block content %}
-        <h1 class="text-xl-center">Students</h1>
-        <li>
-            <a href="{% url 'student_list' %}">All Students</a>
-        </li>
-        <br>
-        <li>
-            <a href="{% url 'student_select_list' %}">Students by Faculty</a>
-        </li>
-    {% endblock content %}
-</body>
-</html>
+
+{% block title %}{{ page_title }}{% endblock title %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="display-5">
+                    <i class="bi bi-people-fill text-primary"></i> {{ page_title }}
+                </h1>
+                <div class="badge bg-success fs-6">{{ active_students }} Active Students</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Statistics Cards -->
+<div class="container mb-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card text-center h-100 border-primary">
+                <div class="card-body">
+                    <i class="bi bi-people text-primary" style="font-size: 3rem;"></i>
+                    <h3 class="card-title text-primary mt-3">{{ total_students }}</h3>
+                    <p class="card-text">Total Students</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center h-100 border-success">
+                <div class="card-body">
+                    <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
+                    <h3 class="card-title text-success mt-3">{{ active_students }}</h3>
+                    <p class="card-text">Active Students</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center h-100 border-info">
+                <div class="card-body">
+                    <i class="bi bi-building text-info" style="font-size: 3rem;"></i>
+                    <h3 class="card-title text-info mt-3">{{ faculties.count }}</h3>
+                    <p class="card-text">Faculties</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Student Management Actions -->
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">
+                <i class="bi bi-gear-fill"></i> Student Management
+            </h2>
+        </div>
+    </div>
+    
+    <div class="row g-4">
+        <!-- All Students -->
+        <div class="col-lg-6">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-list-ul text-primary me-3" style="font-size: 2rem;"></i>
+                        <h4 class="card-title mb-0">View All Students</h4>
+                    </div>
+                    <p class="card-text">
+                        Browse through all registered students with detailed information including 
+                        personal details, academic information, and faculty assignments.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="{% url 'student_list' %}" class="btn btn-primary">
+                            <i class="bi bi-eye-fill"></i> View All Students
+                        </a>
+                        <span class="text-muted small">
+                            <i class="bi bi-info-circle"></i> Demonstrates ListView
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Students by Faculty -->
+        <div class="col-lg-6">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-funnel text-success me-3" style="font-size: 2rem;"></i>
+                        <h4 class="card-title mb-0">Students by Faculty</h4>
+                    </div>
+                    <p class="card-text">
+                        Filter and view students organized by their respective faculties. 
+                        This feature demonstrates filtered querysets and URL parameters.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="{% url 'student_select_list' %}" class="btn btn-success">
+                            <i class="bi bi-filter"></i> Filter by Faculty
+                        </a>
+                        <span class="text-muted small">
+                            <i class="bi bi-info-circle"></i> Demonstrates filtering
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Faculty Overview -->
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="mb-4">
+                <i class="bi bi-building-fill"></i> Faculty Overview
+            </h3>
+        </div>
+    </div>
+    
+    <div class="row g-3">
+        {% for faculty in faculties %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <i class="bi bi-mortarboard text-warning"></i> {{ faculty.name }}
+                    </h6>
+                    <p class="card-text small text-muted">
+                        {{ faculty.students.count }} student{{ faculty.students.count|pluralize }}
+                    </p>
+                    <a href="{% url 'student_list_faculty' faculty.name %}" 
+                       class="btn btn-outline-primary btn-sm">
+                        View Students
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Learning Notes -->
+<div class="container mb-5">
+    <div class="alert alert-info">
+        <h5 class="alert-heading">
+            <i class="bi bi-lightbulb-fill"></i> Django Learning Notes
+        </h5>
+        <p>This page demonstrates several important Django concepts:</p>
+        <ul class="mb-0">
+            <li><strong>Function-based Views:</strong> The students view is a simple function that passes context data to templates</li>
+            <li><strong>Template Context:</strong> Data like student counts and faculty lists are passed from views to templates</li>
+            <li><strong>URL Reversing:</strong> Using <code>{% templatetag openblock %} url {% templatetag closeblock %}</code> tags for dynamic URL generation</li>
+            <li><strong>Model Relationships:</strong> Faculty-Student relationships demonstrating foreign keys</li>
+            <li><strong>Template Inheritance:</strong> This template extends the base template for consistent layout</li>
+        </ul>
+    </div>
+</div>
+{% endblock content %}

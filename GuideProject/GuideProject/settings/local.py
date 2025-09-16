@@ -9,15 +9,11 @@ SECRET_KEY = 'django-insecure-_wiaojgb&9z2d9)80tf7+wzb8(mm#pov&ywhx4mphgizi$%6d^
 DEBUG = True
 ALLOWED_HOSTS = []
 
-# Local Database
+# Local Database - Using SQLite for easier development
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbStudents',
-        'USER': 'postgres',
-        'PASSWORD': 'qZQf6i8cHgY74$&^SU',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

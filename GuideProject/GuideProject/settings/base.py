@@ -15,7 +15,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # My Apps
-    # 'GuideProject.Apps.home',
+    'GuideProject.Apps.home',
     'GuideProject.Apps.person',
     'GuideProject.Apps.faculty',
     # Third Party Apps

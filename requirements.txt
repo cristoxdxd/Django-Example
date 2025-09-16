@@ -1,0 +1,24 @@
+# Django Learning Guide - Requirements
+# Core Django framework and essential packages for the GuideProject
+
+# Django Framework
+Django>=5.2.0,<6.0.0
+
+# UI Framework Integration
+django-bootstrap5>=25.0.0
+
+# Rich Text Editor (for future enhancements)
+django-ckeditor>=6.7.0
+
+# Database Support (optional for production)
+# psycopg2-binary>=2.9.0  # PostgreSQL adapter
+# mysqlclient>=2.1.0      # MySQL adapter
+
+# Development Dependencies (uncomment for development)
+# django-debug-toolbar>=4.0.0
+# django-extensions>=3.2.0
+
+# Production Dependencies (uncomment for production)
+# gunicorn>=20.1.0
+# whitenoise>=6.0.0
+# django-environ>=0.10.0
