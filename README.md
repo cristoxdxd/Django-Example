@@ -141,9 +141,6 @@ After exploring this repository, you will understand:
 - **Template Optimization**: Context processors and template inheritance
 - **Admin Customization**: Custom admin classes with actions and filters
 
-### Screenshots
-![University Management Homepage](https://github.com/user-attachments/assets/935c9cd3-e7fd-4efd-9193-7290cb701d35)
-
 ## 📝 PersonalBlog: Personal Blog Application
 
 ### Features
